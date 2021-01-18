@@ -16,5 +16,31 @@ namespace StudentRecord
         {
             InitializeComponent();
         }
+
+        private void ComputerScience_Click(object sender, EventArgs e)
+        {
+            SampleDataContext db = new SampleDataContext();
+            dataGridView1.DataSource = db.EngineeringStudents.OfType<CSE>().ToList();
+        }
+
+        private void Electronics_Click(object sender, EventArgs e)
+        {
+            SampleDataContext db = new SampleDataContext();
+            dataGridView1.DataSource = db.EngineeringStudents.OfType<ECE>().ToList();
+
+        }
+
+        private void Electrical_Click(object sender, EventArgs e)
+        {
+            SampleDataContext db = new SampleDataContext();
+            dataGridView1.DataSource = db.EngineeringStudents.OfType<EEE>().ToList();
+        }
+
+        private void AddStudent_Click(object sender, EventArgs e)
+        {
+
+            
+
+        }
     }
 }

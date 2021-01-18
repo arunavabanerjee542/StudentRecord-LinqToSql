@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Sample" Class="SampleDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-RBAIMPE\SQLEXPRESS;Initial Catalog=Sample;Integrated Security=True" SettingsObjectName="StudentRecord.Properties.Settings" SettingsPropertyName="SampleConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.EngineeringStudent" Member="EngineeringStudents">
+    <Type Name="EngineeringStudent">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="gender" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="department" Type="System.String" DbType="VarChar(20)" CanBeNull="true" IsDiscriminator="true" />
+      <Type Name="CSE" InheritanceCode="CSE" IsInheritanceDefault="true">
+        <Column Name="ComputerSocietyMember" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      </Type>
+      <Type Name="ECE" InheritanceCode="ECE">
+        <Column Name="ElectricalSocietyMembers" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      </Type>
+      <Type Name="EEE" InheritanceCode="EEE">
+        <Column Name="EectronicSocietyMembers" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      </Type>
+    </Type>
+  </Table>
+</Database>
